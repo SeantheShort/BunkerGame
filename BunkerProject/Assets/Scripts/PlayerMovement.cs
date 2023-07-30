@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(velocity * Time.deltaTime);
 
         // Jumping
-        if (isGrounded && Input.GetButton("Jump") && jumpTimer <= 2f)
+        if (isGrounded && Input.GetButton("Jump") && jumpTimer <= 2f) //Times how long the jump button is held
         {
             jumpTimer += Time.deltaTime;
         }
