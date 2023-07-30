@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 velocity;
     public float jumpForce = 10f;
     public float jumpTimer = 1f;
+    public bool hasGlider = true; //CHANGE THIS WHEN ACQUIRED
+    public bool isGliding;
 
     // Object References
     public CharacterController characterController;
@@ -44,9 +46,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump") && isGrounded) // Applies Jump Force & Time
         {
             velocity.y += jumpForce * jumpTimer;
-            Debug.Log(jumpForce * jumpTimer);
             jumpTimer = 1f;
         }
 
+        //Gliding
+        if(!isGrounded && Input.GetButtonDown("Jump") && hasGlider)
+        {
+            gravityScale = -2f;
+            moveSpeed *= 1.5f;
+            isGliding = true;
+        }
+        if (isGrounded && isGliding)
+        {
+            isGliding = false;
+            gravityScale = -20f;
+            moveSpeed = 5f;
+        }
     }
 }
