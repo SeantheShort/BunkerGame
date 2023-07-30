@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpTimer += Time.deltaTime;
         }
-        if (Input.GetButtonUp("Jump") && isGrounded)
+        if (Input.GetButtonUp("Jump") && isGrounded) // Applies Jump Force & Time
         {
             velocity.y += jumpForce * jumpTimer;
             Debug.Log(jumpForce * jumpTimer);
