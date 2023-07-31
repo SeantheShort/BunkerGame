@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
 
+    // Reference UI Script (so functions can be used)
+    private UIManager UIManager;
+
 
     void Update()
     {
@@ -36,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(movePos * moveSpeed * Time.deltaTime);
 
         // Sprinting
-        if (Input.GetKey(KeyCode.LeftControl) && !isGliding)
+        if (Input.GetKey(KeyCode.LeftControl) && !isGliding && zInput != 0f)
         {
             moveSpeed = 10f;
             isSprinting = true;
@@ -65,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Gliding
-        if(!isGrounded && Input.GetButtonDown("Jump") && hasGlider && velocity.y < 10f)
+        if(!isGrounded && Input.GetButtonDown("Jump") && hasGlider && velocity.y < 5f)
         {
             gravityScale = -2.5f;
             moveSpeed = 7.5f;
@@ -90,5 +93,15 @@ public class PlayerMovement : MonoBehaviour
             mainCamera.fieldOfView = 80;
             FOVLerpTime = 0;
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        UIManager.Instance.SetInteractableText("E", other.gameObject.name); // Sends interacion info to UIManager
+    }
+
+    private void OnTriggerExit(Collider other) // Hides UI after player leaves interactable
+    {
+        UIManager.Instance.HideInteractableText();
     }
 }

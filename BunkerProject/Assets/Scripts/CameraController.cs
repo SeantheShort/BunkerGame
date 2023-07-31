@@ -13,11 +13,6 @@ public class CameraController : MonoBehaviour
     // Object References
     public GameObject player;
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
     void Update()
     {
         // Mouse Movement
