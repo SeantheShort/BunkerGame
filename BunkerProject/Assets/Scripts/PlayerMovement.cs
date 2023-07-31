@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         else { isClimbing = false; }
 
         // Sprinting
-        if (Input.GetKey(KeyCode.LeftControl) && !isGliding && zInput != 0f)
+        if (Input.GetKey(KeyCode.LeftControl) && !isGliding && zInput != 0f && isGrounded)
         {
             moveSpeed = 10f;
             isSprinting = true;
