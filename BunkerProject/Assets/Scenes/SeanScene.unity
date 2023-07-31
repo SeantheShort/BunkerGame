@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e23650f83b0824291f813dbb6aba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
   gravityScale: -20
   isGrounded: 0
   velocity: {x: 0, y: 0, z: 0}
@@ -827,8 +827,9 @@ MonoBehaviour:
   jumpTimer: 1
   hasGlider: 1
   isGliding: 0
+  isSprinting: 0
   characterController: {fileID: 1525536921}
-  camPos: {fileID: 931333149}
+  mainCamera: {fileID: 931333148}
   groundCheck: {fileID: 893755472}
   groundMask:
     serializedVersion: 2

@@ -15,9 +15,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTimer = 1f;
     public bool hasGlider = true; //CHANGE THIS WHEN ACQUIRED
     public bool isGliding;
+    public bool isSprinting;
+    public float FOVLerpTime = 0f;
 
     // Object References
     public CharacterController characterController;
+    public Camera mainCamera;
     public Transform groundCheck;
     public LayerMask groundMask;
 
@@ -31,6 +34,18 @@ public class PlayerMovement : MonoBehaviour
         // Moving Character
         Vector3 movePos = transform.right * xInput + transform.forward * zInput;
         characterController.Move(movePos * moveSpeed * Time.deltaTime);
+
+        // Sprinting
+        if (Input.GetKey(KeyCode.LeftControl) && !isGliding)
+        {
+            moveSpeed = 10f;
+            isSprinting = true;
+        }
+        else if (!isGliding)
+        {
+            moveSpeed = 5f;
+            isSprinting = false;
+        }
 
         // Gravity Stuff
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.5f, groundMask); //Checks to see if character is grounded
@@ -50,17 +65,30 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Gliding
-        if(!isGrounded && Input.GetButtonDown("Jump") && hasGlider)
+        if(!isGrounded && Input.GetButtonDown("Jump") && hasGlider && velocity.y < 10f)
         {
-            gravityScale = -2f;
-            moveSpeed *= 1.5f;
+            gravityScale = -2.5f;
+            moveSpeed = 7.5f;
             isGliding = true;
         }
         if (isGrounded && isGliding)
         {
             isGliding = false;
             gravityScale = -20f;
-            moveSpeed = 5f;
+        }
+
+        // Adaptive FOV (80 to 90)
+        if (isGliding || isSprinting)
+        {
+
+            mainCamera.fieldOfView = Mathf.Lerp(80, 90, FOVLerpTime);
+            FOVLerpTime += 7.5f * Time.deltaTime;
+            FOVLerpTime = Mathf.Min(1, FOVLerpTime);
+        }
+        else
+        { 
+            mainCamera.fieldOfView = 80;
+            FOVLerpTime = 0;
         }
     }
 }
