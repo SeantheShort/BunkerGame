@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isClimbing;
     public bool climbable;
     public float climbForce;
-    public float FOVLerpTime;
+    public float SpeedFOVLerp;
+    public float NormalFOVLerp;
 
     // Object References
     public CharacterController characterController;
@@ -38,8 +39,9 @@ public class PlayerMovement : MonoBehaviour
         hasGlider = true; //CHANGE THIS WHEN ACQUIRED
         climbable = false;
         climbForce = 3f;
-        FOVLerpTime = 0f;
-    }
+        SpeedFOVLerp = 0f;
+        NormalFOVLerp = 0f;
+}
 
     void Update()
     {
@@ -104,16 +106,19 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Adaptive FOV (70 to 75)
-        if (isGliding || isSprinting)
+        if ((isGliding || isSprinting) && !isClimbing)
         {
-            mainCamera.fieldOfView = Mathf.Lerp(70, 75, FOVLerpTime);
-            FOVLerpTime += 10f * Time.deltaTime;
-            FOVLerpTime = Mathf.Min(1, FOVLerpTime);
+            mainCamera.fieldOfView = Mathf.Lerp(70, 75, SpeedFOVLerp);
+            SpeedFOVLerp += 10f * Time.deltaTime;
+            SpeedFOVLerp = Mathf.Min(1, SpeedFOVLerp);
+            NormalFOVLerp = 0f;
         }
         else
-        { 
-            mainCamera.fieldOfView = 70;
-            FOVLerpTime = 0;
+        {
+            mainCamera.fieldOfView = Mathf.Lerp(75, 70, NormalFOVLerp);
+            NormalFOVLerp += 15f * Time.deltaTime;
+            NormalFOVLerp = Mathf.Min(1, NormalFOVLerp);
+            SpeedFOVLerp = 0f;
         }
     }
 

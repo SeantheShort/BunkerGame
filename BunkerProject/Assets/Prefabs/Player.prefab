@@ -162,7 +162,8 @@ MonoBehaviour:
   isClimbing: 0
   climbable: 0
   climbForce: 1
-  FOVLerpTime: 0
+  SpeedFOVLerp: 0
+  NormalFOVLerp: 0
   characterController: {fileID: 1788929578546198762}
   mainCamera: {fileID: 1788929578991985775}
   groundCheck: {fileID: 1788929579038474275}
