@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     float MouseX;
     float MouseY;
     float xRot = 0f;
-    float mouseSensitivity = 500;
+    float mouseSensitivity = 450;
 
     // Object References
     public GameObject player;

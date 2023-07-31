@@ -108,14 +108,14 @@ public class PlayerMovement : MonoBehaviour
         // Adaptive FOV (70 to 75)
         if ((isGliding || isSprinting) && !isClimbing)
         {
-            mainCamera.fieldOfView = Mathf.Lerp(70, 75, SpeedFOVLerp);
+            mainCamera.fieldOfView = Mathf.Lerp(70, 80, SpeedFOVLerp);
             SpeedFOVLerp += 10f * Time.deltaTime;
             SpeedFOVLerp = Mathf.Min(1, SpeedFOVLerp);
             NormalFOVLerp = 0f;
         }
         else
         {
-            mainCamera.fieldOfView = Mathf.Lerp(75, 70, NormalFOVLerp);
+            mainCamera.fieldOfView = Mathf.Lerp(80, 70, NormalFOVLerp);
             NormalFOVLerp += 15f * Time.deltaTime;
             NormalFOVLerp = Mathf.Min(1, NormalFOVLerp);
             SpeedFOVLerp = 0f;
