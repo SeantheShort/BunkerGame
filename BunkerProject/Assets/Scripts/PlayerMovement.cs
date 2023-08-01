@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Gliding
-        if(!isGrounded && Input.GetButtonDown("Jump") && hasGlider && velocity.y < 5f)
+        if(!isGrounded && Input.GetButtonDown("Jump") && hasGlider && velocity.y < 3f)
         {
             gravityScale = -2.5f;
             moveSpeed = 7.5f;
