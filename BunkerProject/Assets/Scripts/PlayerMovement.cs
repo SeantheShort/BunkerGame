@@ -130,5 +130,17 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit(Collider other) // Hides UI after player leaves interactable
     {
         UIManager.Instance.HideInteractableText();
+        if (other.gameObject.name == "Radio" && UIManager.Instance.radioDone == true)
+        {
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.name == "Energy" && UIManager.Instance.energyDone == true)
+        {
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.name == "Resources" && UIManager.Instance.resourceDone == true)
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

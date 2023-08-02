@@ -49,7 +49,6 @@ public class UIManager : MonoBehaviour
         if (isInteractable && Input.GetKeyDown(KeyCode.E)) 
         {
             CompleteTask(interactableName);
-            Debug.Log(interactableName + " Task Done"); //Replace with if statements that determine what to do depending on interactableName
             HideInteractableText();
         }
     }
@@ -74,18 +73,21 @@ public class UIManager : MonoBehaviour
         {
             RadioIcon.sprite = RadioDone;
             RadioText.color = Color.black;
+            RadioText.text = "<s>" + RadioText.text + "</s>";
             radioDone = true;
         }
         if (task == "Energy")
         {
             EnergyIcon.sprite = EnergyDone;
             EnergyText.color = Color.black;
+            EnergyText.text = "<s>" + EnergyText.text + "</s>";
             energyDone = true;
         }
         if (task == "Resources")
         {
             ResourceIcon.sprite = ResourceDone;
             ResourceText.color = Color.black;
+            ResourceText.text = "<s>" + ResourceText.text + "</s>";
             resourceDone = true;
         }
 
