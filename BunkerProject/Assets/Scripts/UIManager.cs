@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -86,6 +87,13 @@ public class UIManager : MonoBehaviour
             ResourceIcon.sprite = ResourceDone;
             ResourceText.color = Color.black;
             resourceDone = true;
+        }
+
+        // Game Win Detection
+        if (radioDone && energyDone && resourceDone)
+        {
+            Debug.Log("Game Win!");
+            //SceneManager.LoadScene("Win Scene"); UNCOMMENT THIS WHEN READY
         }
     }
 }
