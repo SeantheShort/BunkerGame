@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
         if (radioDone && energyDone && resourceDone)
         {
             Debug.Log("Game Win!");
-            //SceneManager.LoadScene("Win Scene"); UNCOMMENT THIS WHEN READY
+            //SceneManager.LoadScene("WinScene"); UNCOMMENT THIS WHEN READY
         }
     }
 }
