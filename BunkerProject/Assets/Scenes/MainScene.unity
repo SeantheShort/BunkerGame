@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: afeb82e7cba0889448f4287f580f6b28, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.062388852, g: 0.13767716, b: 0.71732634, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -372,6 +372,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1788929578546198757, guid: 71c3f11670a96144f9bc2e0d7a87b1fe,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1788929578546198759, guid: 71c3f11670a96144f9bc2e0d7a87b1fe,
         type: 3}
       propertyPath: m_Name
@@ -390,12 +395,12 @@ PrefabInstance:
     - target: {fileID: 1788929578546198763, guid: 71c3f11670a96144f9bc2e0d7a87b1fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 76.29
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 1788929578546198763, guid: 71c3f11670a96144f9bc2e0d7a87b1fe,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 102.4
+      value: 233.2
       objectReference: {fileID: 0}
     - target: {fileID: 1788929578546198763, guid: 71c3f11670a96144f9bc2e0d7a87b1fe,
         type: 3}
@@ -801,7 +806,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4256f65a72c56eb428a3a4ac118a20f3,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.0338639
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4256f65a72c56eb428a3a4ac118a20f3,
         type: 3}
@@ -826,7 +831,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4256f65a72c56eb428a3a4ac118a20f3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 232.3
+      value: 233.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4256f65a72c56eb428a3a4ac118a20f3,
         type: 3}

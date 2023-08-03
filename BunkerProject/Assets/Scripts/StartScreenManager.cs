@@ -17,7 +17,7 @@ public class StartScreenManager : MonoBehaviour
     {
         if(instructionScreen.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Space))
         {
-            //SceneManager.LoadScene("MainScene"); UNCOMMENT THIS WHEN READY
+            SceneManager.LoadScene("MainScene");
             Debug.Log("Start Game");
         }
     }

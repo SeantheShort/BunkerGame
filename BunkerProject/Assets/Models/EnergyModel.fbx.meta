@@ -54,6 +54,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Wood
     second: {fileID: 2100000, guid: 61b3631be8eaf6241b599b4c5565c535, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 158db395403cd994dbfe1a0500723ff8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

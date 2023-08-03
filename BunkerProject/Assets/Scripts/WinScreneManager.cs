@@ -8,7 +8,7 @@ public class WinScreneManager : MonoBehaviour
     public void ReplayGame()
     {
         Debug.Log("Restart Game");
-        //SceneManager.LoadScene("MainScene"); UNCOMMENT THIS WHEN READY
+        SceneManager.LoadScene("MainScene");
 
     }
     public void QuitGame()
