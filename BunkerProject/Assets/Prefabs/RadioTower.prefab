@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469914527}
   - component: {fileID: 469914528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Radio
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d365fe4cd167baa40ac583f1d24bd2b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d365fe4cd167baa40ac583f1d24bd2b3,
         type: 3}
@@ -124,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d365fe4cd167baa40ac583f1d24bd2b3,
         type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

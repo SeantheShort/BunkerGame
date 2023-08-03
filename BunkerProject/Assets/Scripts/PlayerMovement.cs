@@ -98,9 +98,9 @@ public class PlayerMovement : MonoBehaviour
             gravityScale = -2.5f;
             isGliding = true;
         }
-        if (isGliding && moveSpeed <= 20f)
+        if (isGliding && moveSpeed <= 30f)
         {
-            moveSpeed += 5 * Time.deltaTime;
+            moveSpeed += 7.5f * Time.deltaTime;
         }
         if (isGrounded && isGliding)
         {

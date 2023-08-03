@@ -1329,7 +1329,7 @@ RectTransform:
   - {fileID: 9015578903161282430}
   - {fileID: 9015578901708529429}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractableText: {fileID: 9015578901708529430}
-  RadioIcon: {fileID: 9015578903286009212}
+  RadioIcon: {fileID: 9015578901825596957}
   RadioDone: {fileID: 21300000, guid: a589d045ca7320c429b693ae47ff9464, type: 3}
   EnergyIcon: {fileID: 9015578903249432589}
   EnergyDone: {fileID: 21300000, guid: 8facaeff007930e44ba5948a202f8a72, type: 3}
