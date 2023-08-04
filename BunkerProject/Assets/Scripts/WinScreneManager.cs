@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class WinScreneManager : MonoBehaviour
 {
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void ReplayGame()
     {
         Debug.Log("Restart Game");
